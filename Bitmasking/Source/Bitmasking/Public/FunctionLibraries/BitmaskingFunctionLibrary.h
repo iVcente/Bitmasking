@@ -73,7 +73,7 @@ class UBitmaskingFunctionLibrary : public UBlueprintFunctionLibrary
 		template <typename TEnum>
 		static void AddFlags(int32& Flags, const TEnum FlagsToAdd)
 		{
-			static_assert(TIsEnum<TEnum>::Value, "Should only call this with enum types.");
+			static_assert(TIsEnum<TEnum>::Value, "Should only call this with Enum types.");
 			Flags |= (static_cast<int32>(FlagsToAdd));
 		}
 			
@@ -86,7 +86,7 @@ class UBitmaskingFunctionLibrary : public UBlueprintFunctionLibrary
 		template <typename TEnum>
 		static void RemoveFlags(int32& Flags, const TEnum FlagsToRemove)
 		{
-			static_assert(TIsEnum<TEnum>::Value, "Should only call this with enum types.");
+			static_assert(TIsEnum<TEnum>::Value, "Should only call this with Enum types.");
 			Flags &= ~(static_cast<int32>(FlagsToRemove));
 		}
 	
@@ -99,7 +99,7 @@ class UBitmaskingFunctionLibrary : public UBlueprintFunctionLibrary
 		template <typename TEnum>
 		static void FlipFlags(int32& Flags, const TEnum FlagsToFlip)
 		{
-			static_assert(TIsEnum<TEnum>::Value, "Should only call this with enum types.");
+			static_assert(TIsEnum<TEnum>::Value, "Should only call this with Enum types.");
 			Flags ^= (static_cast<int32>(FlagsToFlip));
 		}
 
@@ -113,7 +113,7 @@ class UBitmaskingFunctionLibrary : public UBlueprintFunctionLibrary
 		template <typename TEnum>
 		static bool HasAllFlags(int32 Flags, const TEnum FlagsToCheck)
 		{
-			static_assert(TIsEnum<TEnum>::Value, "Should only call this with enum types.");
+			static_assert(TIsEnum<TEnum>::Value, "Should only call this with Enum types.");
 			return EnumHasAllFlags(static_cast<TEnum>(Flags), FlagsToCheck);
 		}
 
@@ -127,7 +127,7 @@ class UBitmaskingFunctionLibrary : public UBlueprintFunctionLibrary
 		template <typename TEnum>
 		static bool HasAnyFlags(int32 Flags, const TEnum FlagsToCheck)
 		{
-			static_assert(TIsEnum<TEnum>::Value, "Should only call this with enum types.");
+			static_assert(TIsEnum<TEnum>::Value, "Should only call this with Enum types.");
 			return EnumHasAnyFlags(static_cast<TEnum>(Flags), FlagsToCheck);
 		}
 };
